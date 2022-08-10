@@ -17,6 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/{text}', function ($text) {
-    return $text;
-});
+//Route::get('/{text}', function ($text) {
+//    return $text;
+//});
+
+//https://stackoverflow.com/questions/34545641/php-artisan-makeauth-command-is-not-defined
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
